@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 import os
+import django_heroku
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -172,3 +173,4 @@ REST_USE_JWT = False
 SITE_ID = 1
 
 
+django_heroku.settings(locals())
