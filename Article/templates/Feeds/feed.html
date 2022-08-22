@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block head_content %}
+    <title>Nap</title>
+{% endblock%}
+{% load rest_framework %}
+{% block container %}
+
+    <div class="container">
+        <div class="row">
+
+            {% for i in data %}
+
+            <div class="col-sm-12 col-md-8 offset-md-2 mt-5 p-0 post-container">
+                <p class="col-sm-12  post-container" height="35" >User | {{i.user}}</p>
+                            
+                                  <div class="media pt-3 pl-3 pb-1">
+                            
+                            <div class="media-body">
+                                <p style="margin-center: 5px;">{{ i.title}}</p>
+                            </div>
+                    </div>
+                </a>
+                <a href="#">
+                    <img style="width: 100%;" src="{{ i.feature_image.url }}" alt="">
+                </a>
+                
+                <p class="cen" >
+                    <a href="{% url 'comment' %}" style="color: #000; font-size: 20px;">
+                        <img src="https://img.icons8.com/metro/26/000000/comments.png"/>
+                        
+                    </a>
+                
+                </p>
+                <p class='save'>
+                <a href="{% url 'save' %}" style="color: #000; font-size: 20px;">
+               <img src="https://img.icons8.com/windows/32/000000/save--v2.png"/>
+                </a>    
+            </p>
+                
+            <p >
+                <a href="{% url 'edit' pk=i.pk %}" style="color: #000; font-size: 20px;">
+                    <img src="https://img.icons8.com/external-kiranshastry-gradient-kiranshastry/28/000000/external-edit-interface-kiranshastry-gradient-kiranshastry-1.png"/> Edit
+                </a>    
+            </p>
+               <p class="ml-2 mt-0 mb-2">
+ 
+                    <b></b>  <small>{{ i.description }}</small>
+                    
+                </p>
+            </div>
+
+           
+            {% endfor %}
+        </div>
+    </div>
+   
+{% endblock %}

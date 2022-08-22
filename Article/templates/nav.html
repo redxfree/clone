@@ -1,0 +1,41 @@
+{% load static %}
+<nav class="navbar navbar-expand-lg fixed-top navbar-light" id="main-navbar">
+    <div class="container">
+        <a class="navbar-brand pr-5" style="border-right: 1px solid #efefef;" href="{% url 'list' %}">
+            <img src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/000000/external-nap-comfort-flaticons-lineal-color-flat-icons-2.png"/>
+            
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mr-auto">
+
+                {% load account %}
+
+                <li class="nav-item nav-icon">
+                    <a href="{% url 'create' %}" >
+                        <img src="https://img.icons8.com/nolan/64/add.png"/>
+                        <span class="d-sm-block d-md-none d-xl-none">Add Post</span>
+                    </a>
+                </li>
+
+                <li class="nav-item nav-icon">
+                    <a href="{% url 'lo' %}">
+                        <img src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/000000/external-login-web-store-flaticons-lineal-color-flat-icons-2.png"/>
+                        <span class="d-sm-block d-md-none d-xl-none">Login</span>
+                    </a>
+                </li>
+
+
+                <li class="nav-item nav-icon">
+                    <a href="{% url 'rest_logout' %}">
+                        <img src="https://img.icons8.com/external-sbts2018-flat-sbts2018/58/000000/external-logout-social-media-basic-1-sbts2018-flat-sbts2018.png"/>
+                        <span class="d-sm-block d-md-none d-xl-none">Log Out</span>
+                    </a>
+                </li>
+                    <strong>Login for creating,saving,editing Just a demo</strong>
+            </ul>
+        </div>
+    </div>
+</nav>
